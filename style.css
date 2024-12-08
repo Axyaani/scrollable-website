@@ -1,0 +1,97 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.page-wrapper {
+  height: 100vh;
+  scroll-snap-type: y mandatory; /* Enables vertical scroll snapping */
+  overflow-y: scroll; /* Allow scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling between sections */
+}
+
+.section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  scroll-snap-align: start; /* Ensure each section starts at the top of the viewport */
+  transition: background-color 0.5s ease;
+}
+
+#section1 {
+  background-color: #3498db;
+  color: white;
+}
+
+#section2 {
+  background-color: #09642f;
+  color: white;
+}
+
+#section3 {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#section4 {
+  background-color: #f39c12;
+  color: white;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Optional: Add a smooth transition effect when hovering over the content */
+.content h1, .content p {
+  transition: transform 0.3s ease-in-out;
+}
+
+.section:hover .content h1 {
+  transform: translateY(-10px);
+}
+
+.section:hover .content p {
+  transform: translateY(10px);
+}
+
+/* Add a simple navigation bar to show position */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+nav a {
+  color: white;
+  font-size: 18px;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
